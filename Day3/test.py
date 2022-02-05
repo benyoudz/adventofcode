@@ -1,39 +1,3 @@
-
-Arr_Binaries = open('input.txt','r').readlines()
-def split(bin):
-    return [num for num in bin]
-Bgamm = [] #Array Of Binary Gammar rate
-Bepsilon=[] # Array Of Binary epsilon
-#============== Count Zeros And Ones In Binary
-for Sor in range(12):
-   Zeros=0
-   Ones=0
-   for bit in range(len(Arr_Binaries)):
-       binary = split(Arr_Binaries[bit])
-       if int(binary[Sor]) == 0:
-           Zeros += 1
-       else:
-           Ones += 1
-   if Zeros > Ones:
-           Bgamm.append(0)
-           Bepsilon.append(1)
-   else:    
-           Bgamm.append(1)
-           Bepsilon.append(0)  
-# gamm = ''.join(str(x) for x in Bgamm)
-# eps =''.join(str(x) for x in Bepsilon)
-Dgamm =0
-Deps=0
-length = len(Bgamm)
-# Script For Convert Binary To Decimal 'D' Reference Decimals & 'B' Reference Binarys
-for i in range(length):
-   Dgamm += int(Bgamm[i])*(2**(length-i-1))    
-   Deps += int(Bepsilon[i])*(2**(length-i-1))   
-print('the power consumption of the submarine Is   =',Dgamm*Deps)        
-#=============================================================================================
-#========================================= Part Two ==========================================
-#=============================================================================================
-#========================oxygen generator rating===============================
 import copy
 def split(bin):
     return [num for num in bin]
@@ -184,5 +148,6 @@ length = len(On)
 # Script For Convert Binary To Decimal 'D' Reference Decimals & 'B' Reference Binarys
 for i in range(length):
     Dcn += int(Cn[i])*(2**(length-i-1))    
-    Don += int(On[i])*(2**(length-i-1))     
+    Don += int(On[i])*(2**(length-i-1))  
+print('O2 Rate => ',Don,'  Co2 Rate=>',Dcn)    
 print('the life support rating of the submarine Is =',Dcn*Don)
